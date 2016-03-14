@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+    
+    <link href="css/3-col-portfolio.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Karasongs</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                      <!--  <div class="input-group col-md-3">
+                      <input type="text" class="form-control query" placeholder="Search for...">
+                      <span class="input-group-btn">
+                      <button class="btn btn-success search-button" disabled type="button">Search</button>
+                      </span>
+                    </div> -->
+                    </li>
+                </ul>
+                
+                <div class="col-sm-3 col-md-3 pull-right">
+                    <!--<form class="navbar-form" role="search">-->
+                    <div class="input-group">
+                        <input type="text" class="form-control query" placeholder="Search" name="srch-term" id="srch-term">
+                        <div class="input-group-btn">
+                            <button class="btn btn-success search-button" disabled><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                    <!--</form>-->
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header id = "search-header">
+        
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Karasongs</h1>
+                <hr>
+                 <div class="input-group">
+                      <input id = "" type="text" class="query form-control" placeholder="Search for...">
+                      <span class="input-group-btn">
+                      <button id = "" disabled class="btn btn-success search-button" type="button" >Search</button>
+                      </span>
+                    </div> 
+                <p>Youtube integrated search engine for your favorite videos!</p>
+                <!--<a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>-->
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary hidden" id="about">
+        <div class="container">
+            <div class="row">
+                 <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header" >Search Results:
+                            <small id = "search-keyword"></small>
+                        </h1>
+                        <div class="text-center">
+                            <ul class="pagination ">
+                                <li id = "prev-cont">
+                                    <button class = "btn btn-default prev">&laquo; previous</button>
+                                </li>
+                                <li id = "next-cont">
+                                    <button class = "btn btn-default next">next &raquo;</button>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+                <!-- /.row -->
+                
+                <div id = "row-template" class = "hidden">
+                    <div class = 'row'></div>
+                </div>
+
+                <!-- Video Template Row -->
+                <div id = "video-template" class = "hidden">
+                    <div class="col-md-4 portfolio-item">
+                        <a href="#">
+                            <img class="img-responsive" src="{video-thumb-default}" alt="">
+                        </a>
+                        <h3>
+                            <a href="#" class = "modal-show-trigger" id = "{video-id}">{video-name}</a>
+                        </h3>
+                        <p>{video-description}</p>
+                    </div>
+                </div>
+                
+                <!-- search results container  -->
+                <div id = "video-container">
+                    
+                </div>
+                <hr>
+                
+                <!--Template for youtube video iframe-->
+                <div id = "iframe-template" class = "hidden">
+                    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/{{video-url}}" frameborder="1" allowfullscreen></iframe>-->
+                    <iframe width="100%" height="350px" src="http://www.youtube.com/embed/{{video-url}}?autoplay=1&cc_load_policy=1&autohide=0" style="padding:15px 15px 0px 15px;background:#1a1a1a;border-radius:15px;-moz-box-shadow:3px 3px 3px black;-webkit-box-shadow:3px 3px 3px black;box-shadow:3px 3px 3px black;" frameborder="0"></iframe><br/><div style="width:590px;"><iframe src="//www.facebook.com/plugins/like.php?href=http://youtu.be/{{video-url}}&send=false&layout=button_count&width=100&show_faces=false&action=like&colorscheme=light&font=arial&height=21&" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe><a style="font-size: 11px;font-weight: bold;font-family: Helvetica, Arial, sans-serif;border: 2px solid #DD3224;padding: 1px;border-radius: 3px;color: white;text-decoration:none;background-color: #DD3224;margin-left: 25px;vertical-align:6px;" href="https://www.youtube.com/all_comments?v={{video-url}}" target="_blank">Comments >></a></div>
+                </div>
+                
+                <!-- video play modal  -->
+                <div id = "video-modal" class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                  <div class="modal-dialog modal-md">
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body" id = "iframe-container">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <ul class="pagination">
+                            <li id = "prev-cont">
+                                <button class = "btn btn-default prev">&laquo; previous</button>
+                            </li>
+                            <li id = "next-cont">
+                                <button class = "btn btn-default next">next &raquo;</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+    
+   <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+</body>
+
+</html>
